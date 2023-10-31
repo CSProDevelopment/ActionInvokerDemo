@@ -1,3 +1,15 @@
 <resources>
+    <string name="abort_on_first_exception">Abort on first exception</string>
     <string name="app_name">Action Invoker Demo</string>
+    <string name="button_runCopyFileIntoCSEntry">Copy File Into CSEntry Directory</string>
+    <string name="button_runCopyFileFromCSEntry">Copy File From CSEntry Directory</string>
+    <string name="button_runMessageFormatText">Run Message.formatText (result is string)</string>
+    <string name="button_runMessageActionValidValid">Run Message.formatText (with two valid actions)</string>
+    <string name="button_runMessageActionValidInvalid">Run Message.formatText (with a valid and invalid action)</string>
+    <string name="button_runMessageActionInvalidValid">Run Message.formatText (with an invalid and valid action)</string>
+    <string name="button_runPathGetDirectoryListing">Run Path.getDirectoryListing  (result is object)</string>
+    <string name="button_runFileReadLines">Run File.readLines (on sync.log)  (result is array)</string>
+    <string name="display_results_as_returned">Display JSON results as directly returned by the Action Invoker</string>
+    <string name="file_provider_authority">gov.census.cspro.actioninvokerdemo.FileProvider</string>
+    <string name="initial_results">Select an option and the results will appear here.</string>
 </resources>
