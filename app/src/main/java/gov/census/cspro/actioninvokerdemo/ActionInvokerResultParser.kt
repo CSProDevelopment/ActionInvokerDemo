@@ -18,8 +18,8 @@ class ActionInvokerResultParser(var throwExceptions: Boolean = true) {
 
           return when( type ) {
                "exception" -> {
-                    assert(value is String)
-                    val exception = Exception(value as String)
+                    assert(value is JSONObject)
+                    val exception = Exception((value as JSONObject).getString("message"))
                     if( throwExceptions ) {
                          throw exception
                     }

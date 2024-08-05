@@ -24,7 +24,7 @@ class MainActivity : ComponentActivity() {
     private val actionInvokerLauncherForSharingFiles = registerForActivityResult(ActionInvokerWrapperForSharingFiles(actionInvokerWrapper), ::onActionInvokerResults)
     private val actionInvokerLauncherForCopyFileInto = registerForActivityResult(actionInvokerWrapper, ::onActionInvokerResultsForCopyFileInto)
     private val actionInvokerLauncherForCopyFileFromPathSelectFile  = registerForActivityResult(actionInvokerWrapper, ::onActionInvokerResultsForCopyFileFromPathSelectFile)
-    private val actionInvokerLauncherForCopyFileFromFileGetSharableUri  = registerForActivityResult(actionInvokerWrapper, ::onActionInvokerResultsForCopyFileFromFileGetSharableUri)
+    private val actionInvokerLauncherForCopyFileFromSystemGetSharableUri  = registerForActivityResult(actionInvokerWrapper, ::onActionInvokerResultsForCopyFileFromSystemGetSharableUri)
 
     private lateinit var checkBoxDisplayResultsAsReturned: CheckBox
     private lateinit var checkBoxAbortOnFirstException: CheckBox
@@ -237,10 +237,10 @@ class MainActivity : ComponentActivity() {
 
             // get a sharable URI for the file
             val action = JSONObject()
-                .put("action", "File.getSharableUri")
+                .put("action", "System.getSharableUri")
                 .put("path", sourcePath)
             runAction(action) { actionString ->
-                actionInvokerLauncherForCopyFileFromFileGetSharableUri.launch(actionString)
+                actionInvokerLauncherForCopyFileFromSystemGetSharableUri.launch(actionString)
             }
         }
         catch( exception: Exception ) {
@@ -248,7 +248,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private fun onActionInvokerResultsForCopyFileFromFileGetSharableUri(result: String) {
+    private fun onActionInvokerResultsForCopyFileFromSystemGetSharableUri(result: String) {
         try {
             val jsonObject = JSONTokener(result).nextValue() as JSONObject
             val uriString = ActionInvokerResultParser(true).parse(jsonObject) as String
