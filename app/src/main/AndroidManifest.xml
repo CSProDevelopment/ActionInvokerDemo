@@ -6,7 +6,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
-        tools:targetApi="31">
+        tools:targetApi="36">
 
         <activity
             android:name=".MainActivity"
